@@ -1,0 +1,56 @@
+*{
+box-sizing: border-box;
+}
+h1{
+width:100%;
+text-align:center;
+}
+
+form.search-comment input[type=text]{
+padding: 10px;
+font-size: 17px;
+border: 1px solid grey;
+float: left;
+width: 80%;
+background: #f1f1f1;
+}
+
+form.search-comment button{
+float: left;
+width: 20%;
+padding: 10px;
+background: #2196F3;
+color: white;
+font-size: 17px;
+border: 1px solid grey;
+border-left: none;
+cursor: pointer;
+}
+
+form.search-comment button:hover {
+background: #0b7dda;
+}
+
+form.search-comment::after {
+content: "";
+clear: both;
+display: table;
+}
+/* 000000000000000000000000000000000000000 */
+
+div.container{
+width:600px;
+margin-left:calc(50% - 300px);
+}
+div.post{
+width:100%;
+padding-bottom:5px;
+}
+div.post-title{
+width:100%;
+padding-bottom:5px;
+}
+div.post-comment{
+width:100%;
+padding-bottom:5px;
+}

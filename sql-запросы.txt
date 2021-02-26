@@ -1,0 +1,21 @@
+создание БД
+
+"CREATE DATABASE `testDataBase` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci"
+
+Создание таблиц
+
+"CREATE TABLE `testdbase`.`posts` ( `userId` INT(5) NOT NULL , `postId` INT(5) NOT NULL , `postTitle` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , `postBody` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci"
+
+"CREATE TABLE `testdbase`.`comments` ( `postId` INT(5) NOT NULL , `commentId` INT(5) NOT NULL , `userName` VARCHAR(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , `userMail` VARCHAR(50) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL , `commentBody` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL ) ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci"
+
+"ALTER TABLE `comments` ADD PRIMARY KEY(`commentId`)" - каждый комментарий уникален
+
+"ALTER TABLE `posts` ADD PRIMARY KEY(`postId`)" - каждый пост уникален
+
+Заполнение таблиц происходит в цикле построчно запросы не группируются в один, тк. есть риск спровоцировать ошибку БД - превышение макс. длины запроса.
+Т.к в заданном примере БД заполняется один раз, повышенная нагрузка на сервер при заполнении не несет в себе существенных потерь
+
+"INSERT INTO `posts` (`userId`, `postId`, `postTitle`, `postBody`) VALUES ('<переменная РНР>','<переменная РНР>','<переменная РНР>')"
+
+"INSERT INTO `comments` (`postId`, `commentId`, `userName`, `userMail`, `commentBody`) VALUES ('<переменная РНР>','<переменная РНР>',
+'<переменная РНР>','<переменная РНР>','<переменная РНР>')"
